@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchTranslations"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        android:padding="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/editSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSearch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="17dp"
+        android:clickable="true"
+        app:rippleColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvSearchTranslations"
+        app:maxImageSize="40dp"
+        app:tint="@color/black"
+        app:srcCompat="@drawable/search_translations2" />
+
+    <EditText
+        android:id="@+id/editSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="40dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="@string/buscarTraduccion"
+        android:textColorHint="@color/whiteOp"
+        android:textColor="@color/white"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fabSearch2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFabsSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/fabSearch2"
+        app:layout_constraintEnd_toEndOf="@+id/fabSearch2"
+        app:layout_constraintStart_toStartOf="@+id/fabSearch2">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSearchTranslation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:clickable="true"
+            app:fabCustomSize="48dp"
+            app:rippleColor="@color/blue"
+            app:layout_constraintBottom_toTopOf="@+id/fabSearchWord"
+            app:layout_constraintStart_toStartOf="parent"
+            app:maxImageSize="23dp"
+            app:tint="@color/black"
+            app:srcCompat="@drawable/t_translation2" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSearchWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:clickable="true"
+            app:fabCustomSize="48dp"
+            app:tint="@color/black"
+            app:rippleColor="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:maxImageSize="25dp"
+            app:srcCompat="@drawable/w_translation2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

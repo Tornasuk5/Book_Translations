@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_inicio"
+            android:icon="@drawable/icon_inicio"
+            android:checkable="false"
+            android:title="@string/navTextInicio"
+            />
+        <item android:id="@+id/nav_general"
+            android:icon="@drawable/icon_general"
+            android:checkable="false"
+            android:title="@string/navTextGeneral"
+            />
+        <item android:id="@+id/nav_overlord"
+            android:icon="@drawable/overlord_logo3"
+            android:checkable="false"
+            android:title="@string/navTextOverlord"
+            />
+        <item android:id="@+id/nav_loghorizon"
+            android:icon="@drawable/icon_log2"
+            android:checkable="false"
+            android:title="@string/navTextLogHorizon"
+            />
+        <item android:id="@+id/nav_classroom"
+            android:icon="@drawable/icon_class1"
+            android:checkable="false"
+            android:title="@string/navTextClassroom"
+            />
+        <item android:id="@+id/nav_ngnl"
+            android:icon="@drawable/icon_ngnl"
+            android:checkable="false"
+            android:title="@string/navTextNgl"
+            />
+        <item android:id="@+id/nav_clannad"
+            android:icon="@drawable/icon_clannad"
+            android:checkable="false"
+            android:title="@string/navTextClannad"
+            />
+    </group>
+</menu>

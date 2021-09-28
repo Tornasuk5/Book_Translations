@@ -1,0 +1,22 @@
+
+q
+java:S14504"VRemove the "fabOpen" field and declare it as a local variable in the relevant methods.(•ú¹ûÿÿÿÿ
+œ
+java:S11866"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ú‰İÒøÿÿÿÿ
+A
+java:S16594"&Declare "fabClose" on a separate line.(•ú¹ûÿÿÿÿ
+h
+java:S3776;"RRefactor this method to reduce its Cognitive Complexity from 70 to the 15 allowed.(ï ±ª
+—
+java:S1186e"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±
+—
+java:S1186p"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±¾ê
+˜
+java:S1186æ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô°¤¦
+D	java:S108")Either remove or fill this block of code.(äîíûÿÿÿÿ
+D	java:S108’")Either remove or fill this block of code.(äîíûÿÿÿÿ
+8	java:S131®""Add a default case to this switch.(âñ‚¸
+˜
+java:S1186…"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ğ«Ôƒ
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úƒÚÓûÿÿÿÿ

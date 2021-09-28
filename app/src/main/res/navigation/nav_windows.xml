@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_windows"
+    app:startDestination="@id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="tornasuk.translations.navfragments.HomeFrag"
+        android:label="@string/navTextInicio"
+        tools:layout="@layout/home_layout">
+    </fragment>
+    <fragment
+        android:id="@+id/nav_general"
+        android:name="tornasuk.translations.navfragments.GeneralTranslationsFrag"
+        android:label="@string/navTextGeneral"
+        tools:layout="@layout/general_layout">
+    <argument
+        android:name="@string/generalArg"
+        app:argType="string"
+        android:defaultValue="General" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_clannad"
+        android:name="tornasuk.translations.navfragments.GeneralTranslationsFrag"
+        android:label="@string/navTextClannad"
+        tools:layout="@layout/general_layout">
+        <argument
+            android:name="@string/generalArg"
+            app:argType="string"
+            android:defaultValue="Clannad" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_overlord"
+        android:name="tornasuk.translations.navfragments.VolumesFrag"
+        android:label="@string/navTextOverlord"
+        tools:layout="@layout/volumes_layout">
+        <argument
+            android:name="@string/novelArg"
+            app:argType="string"
+            android:defaultValue="Overlord" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_loghorizon"
+        android:name="tornasuk.translations.navfragments.VolumesFrag"
+        android:label="@string/navTextLogHorizon"
+        tools:layout="@layout/volumes_layout">
+        <argument
+            android:name="@string/novelArg"
+            app:argType="string"
+            android:defaultValue="Log Horizon"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_classroom"
+        android:name="tornasuk.translations.navfragments.VolumesFrag"
+        android:label="@string/navTextClassroom"
+        tools:layout="@layout/volumes_layout">
+        <argument
+            android:name="@string/novelArg"
+            app:argType="string"
+            android:defaultValue="Classroom of the Elite" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_ngnl"
+        android:name="tornasuk.translations.navfragments.VolumesFrag"
+        android:label="@string/navTextNgl"
+        tools:layout="@layout/volumes_layout">
+        <argument
+            android:name="@string/novelArg"
+            app:argType="string"
+            android:defaultValue="No Game No Life" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_libroPags"
+        android:name="tornasuk.translations.navfragments.PagesFrag"
+        android:label="@string/libroPags"
+        tools:layout="@layout/pages_layout">
+        <action
+            android:id="@+id/nav_libroPags_to_nav_translations"
+            app:destination="@id/nav_translations" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_translations"
+        android:name="tornasuk.translations.navfragments.NovelTranslationsFrag"
+        android:label="@string/navTranslation"
+        tools:layout="@layout/translations_layout"/>
+    <fragment
+        android:id="@+id/nav_searchTranslations"
+        android:name="tornasuk.translations.navfragments.SearchTranslations"
+        android:label="@string/navSearchTranslations"
+        tools:layout="@layout/search_translations_layout" />
+    <fragment
+        android:id="@+id/nav_checkWords"
+        android:name="tornasuk.translations.navfragments.CheckWordsFrag"
+        android:label="@string/checkWordLabel" />
+    <fragment
+        android:id="@+id/nav_lastTranslations"
+        android:name="tornasuk.translations.navfragments.LastTranslations"
+        android:label="@string/navLastTranslations"
+        tools:layout="@layout/last_translations_layout"/>
+</navigation>

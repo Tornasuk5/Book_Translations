@@ -1,0 +1,14 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…ÃÖ„ıÿÿÿÿ
+Z
+java:S1128"=Remove this unused import 'tornasuk.translations.Constantes'.(¨Áùø8©ëâœ/
+œ
+java:S11861"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ùçñúÿÿÿÿ
+h
+java:S37766"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ï ±ª
+N
+java:S1602I",Remove useless curly braces around statement(øß˜şÿÿÿÿ8·ëâœ/
+N
+java:S1602M",Remove useless curly braces around statement(®ŠÌ°şÿÿÿÿ8šÿâœ/
+Ÿ
+java:S1186™"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô°¤¦8ÿâœ/

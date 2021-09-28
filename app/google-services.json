@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "724058994266",
+    "firebase_url": "https://booktranlations.firebaseio.com",
+    "project_id": "booktranlations",
+    "storage_bucket": "booktranlations.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724058994266:android:5f9533ea5e5fe57bb98a63",
+        "android_client_info": {
+          "package_name": "tornasuk.translations"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724058994266-aoecr7gqrj8ukf78ckb8t1vef9206epl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tornasuk.translations",
+            "certificate_hash": "1fe3576a315b7fe4a3a97d7af8060304b90205aa"
+          }
+        },
+        {
+          "client_id": "724058994266-hlgprvcq9qt114r3ski1l0o1fmrtt5pd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzp6kd_az8UrqxVoS6ajxEKsg4sIiZxqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724058994266-hlgprvcq9qt114r3ski1l0o1fmrtt5pd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

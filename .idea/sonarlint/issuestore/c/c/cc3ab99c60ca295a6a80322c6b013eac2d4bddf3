@@ -1,0 +1,10 @@
+
+’
+java:S1319"wThe type of the "translations" object should be an interface such as "List" rather than the implementation "ArrayList".(¡Çßÿşÿÿÿÿ
+‹
+java:S1319 "pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ı§Ğ¾øÿÿÿÿ
+
+java:S1319$"wThe type of the "translations" object should be an interface such as "List" rather than the implementation "ArrayList".(‡ª¦¿
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Æ¤Ø›ÿÿÿÿÿ
+C
+java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX

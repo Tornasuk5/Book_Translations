@@ -1,0 +1,12 @@
+
+u
+java:S1450!"ZRemove the "firebasebdd" field and declare it as a local variable in the relevant methods.(Ê°öšÿÿÿÿÿ
+œ
+java:S1186)"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ½°ßşÿÿÿÿ
+h
+java:S3776."RRefactor this method to reduce its Cognitive Complexity from 60 to the 15 allowed.(ï ±ª
+C	java:S1088")Either remove or fill this block of code.(ƒˆ„Òÿÿÿÿÿ
+˜
+java:S1186„"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô°¤¦
+C	java:S108Q")Either remove or fill this block of code.(äîíûÿÿÿÿ
+C	java:S108b")Either remove or fill this block of code.(äîíûÿÿÿÿ
