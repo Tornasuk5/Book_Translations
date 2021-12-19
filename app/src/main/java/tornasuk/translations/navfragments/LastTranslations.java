@@ -113,18 +113,22 @@ public class LastTranslations extends Fragment {
                 new Thread(() -> {
                     TranslationRepository roomRepo = new TranslationRepository(requireActivity().getApplication());
                     lastTranslations = (ArrayList<Translation>) roomRepo.getLastTranslations();
+                    ArrayList<Translation> deleteTranslations = new ArrayList<>();
                     for (Translation translationFor : lastTranslations){
                         if(translations.containsKey(translationFor.getId())) {
                             Translation translation = translations.get(translationFor.getId());
-                            if(!translation.getWord().equals(translationFor.getWord()) ||
-                                    !translation.getWordTranslation().equals(translationFor.getWordTranslation())) {
-                                roomRepo.updateTranslation(translations.get(translationFor.getId()));
+                            if(!translation.getWord().equals(translationFor.getWord()) || !translation.getWordTranslation().equals(translationFor.getWordTranslation())) {
+                                roomRepo.executorService.submit(() -> roomRepo.updateTranslation(translations.get(translationFor.getId())));
                                 translationFor.setWord(translation.getWord());
                                 translationFor.setWordTranslation(translation.getWordTranslation());
                             }
                         } else {
-                            roomRepo.deleteTranslation(translationFor);
-                            lastTranslations.remove(translationFor);
+                            roomRepo.executorService.submit(() -> roomRepo.deleteTranslation(translationFor));
+                            deleteTranslations.add(translationFor);
+                        }
+
+                        for(Translation translation : deleteTranslations){
+                            lastTranslations.remove(translation);
                         }
                     }
                     new Handler(Looper.getMainLooper()).post(() -> {

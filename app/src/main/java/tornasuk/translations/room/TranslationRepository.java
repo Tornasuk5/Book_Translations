@@ -2,7 +2,6 @@ package tornasuk.translations.room;
 
 import android.app.Application;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -16,7 +15,7 @@ import tornasuk.translations.classes.Translation;
 
 public class TranslationRepository {
     private final TranslationDAO translationDAO;
-    private final ExecutorService executorService;
+    public final ExecutorService executorService;
     private List<Translation> lastTranslations;
 
     /**
@@ -37,10 +36,9 @@ public class TranslationRepository {
     public void insertLastTranslation(Translation lastTranslation) {
         executorService.execute(() -> {
             ArrayList<Translation> translations = (ArrayList<Translation>) translationDAO.getLastTranslations();
-            if (translations.size() == 9){
+            if (translations.size() == 9)
                 translationDAO.deleteTranslation(translations.get(0));
-            }
-            translationDAO.insertLastTranslation(lastTranslation);
+            translationDAO.insertTranslation(lastTranslation);
         });
     }
 
@@ -49,13 +47,11 @@ public class TranslationRepository {
      * @param lastTranslation Traducción procedentes de Firebase
      */
     public void updateTranslation(Translation lastTranslation) {
-        executorService.execute(() ->
-                translationDAO.updateLastTranslation(lastTranslation));
+        translationDAO.updateTranslation(lastTranslation);
     }
 
     public void deleteTranslation(Translation lastTranslation) {
-        executorService.execute(() ->
-                translationDAO.deleteTranslation(lastTranslation));
+        translationDAO.deleteTranslation(lastTranslation);
     }
 
     /**

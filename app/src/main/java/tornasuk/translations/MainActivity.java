@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         mainBinding.drawerNav.addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
             public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
-                if(fragTag.equals("Search Translations")){
+                if (fragTag.equals("Search Translations")){
                     mainBinding.navView.requestFocus();
                     hideKeyboard();
                 }

@@ -26,21 +26,25 @@ public interface TranslationDAO {
         @Query("SELECT * FROM translations")
         List<Translation> getLastTranslations();
 
+        /**
+         * Inserta las 9 últimas traducciones almacenadas en Firebase
+         * @param translation Lista de traducciones procedentes de Firebase
+         */
         @Delete
         void deleteTranslation(Translation translation);
 
         /**
          * Inserta las 9 últimas traducciones almacenadas en Firebase
-         * @param lastTranslations Lista de traducciones procedentes de Firebase
+         * @param translation Lista de traducciones procedentes de Firebase
          */
         @Insert
-        void insertLastTranslation(Translation lastTranslations);
+        void insertTranslation(Translation translation);
 
         /**
          * Actualiza las traducciones existentes en la base de datos Room
-         * @param lastTranslations Lista de traducciones procedentes de Firebase
+         * @param translation Lista de traducciones procedentes de Firebase
          */
         @Update
-        void updateLastTranslation(Translation lastTranslations);
+        void updateTranslation(Translation translation);
 
 }

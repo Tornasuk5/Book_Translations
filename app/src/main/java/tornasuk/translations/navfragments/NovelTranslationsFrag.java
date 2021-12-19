@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import tornasuk.translations.adapters.TranslationsAdapter;
 import tornasuk.translations.classes.Translation;
@@ -96,17 +97,14 @@ public class NovelTranslationsFrag extends Fragment {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     translations = new ArrayList<>();
-                    int countPagTranslations = 1;
                     boolean translationsDetected = false;
-
                     for (DataSnapshot translationSnap : snapshot.getChildren()) {
                         if(!translationSnap.getKey().equals("volImg")) {
                             try {
                                 translation = translationSnap.getValue(Translation.class);
-                                idTranslation = Constantes.refID + numPag + "-" + countPagTranslations;
-                                if(translation.getId().equals(idTranslation)) {
+                                String translationPag = translation.getId().split("-")[0];
+                                if(translationPag.split(Constantes.refID)[1].equals(String.valueOf(numPag))) {
                                     translations.add(translation);
-                                    countPagTranslations++;
                                     translationsDetected = true;
                                 } else if(translationsDetected)
                                     break;
@@ -115,7 +113,7 @@ public class NovelTranslationsFrag extends Fragment {
                         }
                     }
 
-                    translations.sort((t1, t2) -> Integer.compare(Integer.parseInt(t1.getId().split("-")[1]), Integer.parseInt(t2.getId().split("-")[1])));
+                    translations.sort(Comparator.comparingInt(t -> Integer.parseInt(t.getId().split("-")[1])));
 
                     translationsAdapter = new TranslationsAdapter(getActivity(), translations, "");
                     translationsBinding.rvTranslations.setAdapter(translationsAdapter);
