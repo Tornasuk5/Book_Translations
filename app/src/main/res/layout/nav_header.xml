@@ -10,9 +10,11 @@
 
     <ImageView
         android:id="@+id/img_user"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@mipmap/ic_user2"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="3dp"
+        android:src="@drawable/shiroe_log_horizon"
+        android:backgroundTint="@android:color/transparent"
         android:layout_marginBottom="2dp"/>
 
     <TextView

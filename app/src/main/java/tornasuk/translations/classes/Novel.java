@@ -6,7 +6,7 @@ public class Novel {
     private String novelName;
     private ArrayList<Volume> volumes;
     private int translationsPercent;
-    private int numStartedVolumes;
+    private int numNovelTranslations;
 
     public Novel(String novelName, ArrayList<Volume> volumes) {
         this.novelName = novelName;
@@ -44,11 +44,11 @@ public class Novel {
         this.translationsPercent = translationsPercent;
     }
 
-    public int getNumStartedVolumes() {
-        return numStartedVolumes;
+    public int getNumNovelTranslations() {
+        return numNovelTranslations;
     }
 
-    public void setNumStartedVolumes(int numStartedVolumes) {
-        this.numStartedVolumes = numStartedVolumes;
+    public void setNumNovelTranslations(int numNovelTranslations) {
+        this.numNovelTranslations = numNovelTranslations;
     }
 }

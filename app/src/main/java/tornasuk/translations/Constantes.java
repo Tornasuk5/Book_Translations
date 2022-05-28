@@ -7,5 +7,6 @@ public class Constantes {
     public static final String ID_CLASSROOM = "class";
     public static final String ID_NGNL = "ngnl";
     public static final String ID_CLANNAD = "clannad";
+    public static final String ID_KOICHOCO = "koichoco";
     public static String refID = "";
 }

@@ -9,6 +9,7 @@
     <string name="navTextClassroom">Classroom of the Elite</string>
     <string name="navTextNgl">No Game No Life</string>
     <string name="navTextClannad">Clannad ~After Story~</string>
+    <string name="navTextKoichoco">Koichoco</string>
     <string name="libroPags">Páginas</string>
     <string name="word">Word :</string>
     <string name="translation">Translation :</string>
@@ -41,9 +42,11 @@
     <string name="lastTranslations">Traducciones recientes</string>
     <string name="searchTranslations">Buscar traducciones</string>
     <string name="wordRepeated">Ya existe esa palabra traducida</string>
+    <string name="wordNotChecked">Comprueba que la palabra o una derivación de ésta no exista ya</string>
     <string name="volRepeated">Ya existe ese volume</string>
     <string name="errorWR">No se pudo abrir la app de WordReference</string>
     <string name="checkWordLabel">Checking word…</string>
+    <string name="errorCheckingWord">Error al buscar la palabra introducida</string>
     <string name="checkWordCoincidencias1">No se han encontrado coincidencias</string>
     <string name="checkWordCoincidencias2">Se ha encontrado 1 coincidencia</string>
 </resources>

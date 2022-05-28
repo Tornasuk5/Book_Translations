@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         appBarConfig = new AppBarConfiguration.Builder(R.id.nav_inicio, R.id.nav_general, R.id.nav_overlord, R.id.nav_loghorizon,
-                R.id.nav_classroom, R.id.nav_ngnl, R.id.nav_clannad)
+                R.id.nav_classroom, R.id.nav_ngnl, R.id.nav_clannad, R.id.nav_koichoco)
                 .setOpenableLayout(mainBinding.drawerNav)
                 .build();
 
@@ -137,6 +137,10 @@ public class MainActivity extends AppCompatActivity {
             case "Clannad ~After Story~":
                 Constantes.refID = Constantes.ID_CLANNAD;
                 icon.setIcon(R.drawable.icon_clannad);
+                break;
+            case "Koichoco":
+                Constantes.refID = Constantes.ID_KOICHOCO;
+                icon.setIcon(R.drawable.choco);
                 break;
             case "Overlord":
                 Constantes.refID = Constantes.ID_OVERLORD;

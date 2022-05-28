@@ -28,8 +28,8 @@
                 android:id="@+id/imgLibroHome"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
+                android:layout_marginStart="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/txtLibroHome"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="@color/blue" />
@@ -48,19 +48,20 @@
             <ProgressBar
                 android:id="@+id/progBarHome"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="244dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="10dp"
                 android:progressTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/imgLibroHome"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/imgLibroHome"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintEnd_toStartOf="@+id/ptoHome"
+                app:layout_constraintStart_toEndOf="@+id/imgLibroHome" />
 
             <TextView
                 android:id="@+id/ptoHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
                 android:background="@drawable/circle_background"
                 android:gravity="center"
                 android:paddingTop="1dp"
@@ -71,12 +72,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/progBarHome"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtNumVolumesHome"
+                android:id="@+id/txtNumNovelTranslations"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"

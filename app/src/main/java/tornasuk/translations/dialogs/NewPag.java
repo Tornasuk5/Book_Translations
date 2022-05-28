@@ -23,9 +23,8 @@ import tornasuk.translations.databinding.DialogNewPagBinding;
 public class NewPag extends AppCompatDialogFragment {
 
     private DatabaseReference firebasebdd;
-    private String novel;
-    private String volume;
-    private String pg;
+    private final String novel;
+    private final String volume;
 
     public NewPag(String novel, String volume) {
         this.novel = novel;
@@ -42,28 +41,28 @@ public class NewPag extends AppCompatDialogFragment {
         newPagBinding.btnAddPag.setOnClickListener(v -> firebasebdd.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot snapshot) {
-                if(!newPagBinding.editTextPag.getText().toString().trim().equals("")) {
+                String pag = newPagBinding.editTextPag.getText().toString();
+                if(!pag.trim().equals("")) {
                     boolean repeatPag = false;
-                    pg = Constantes.refID + newPagBinding.editTextPag.getText().toString() + "-1";
+                    String pagComplete = Constantes.refID + pag + "-1";
                     for (DataSnapshot pagSnapshot : snapshot.getChildren()) {
-                        if (pagSnapshot.getKey().equals(pg)) {
+                        if (pagSnapshot.getKey().equals(pagComplete)) {
                             repeatPag = true;
-                            Toast.makeText(getActivity(), R.string.pgExiste, Toast.LENGTH_SHORT).show();
                             break;
                         }
                     }
 
                     if (!repeatPag) {
-                        firebasebdd.child(pg).setValue(pg);
+                        firebasebdd.child(pagComplete).setValue(pagComplete);
 
                         Bundle data = new Bundle();
-                        data.putInt("Pg", Integer.parseInt(newPagBinding.editTextPag.getText().toString()));
+                        data.putInt("Pg", Integer.parseInt(pag));
                         data.putString("Novel", novel);
                         data.putString("Volume", volume);
                         Navigation.findNavController(requireActivity(), R.id.nav_host_frag).navigate(R.id.nav_translations, data);
 
                         dismiss();
-                    }
+                    } else Toast.makeText(getActivity(), R.string.pgExiste, Toast.LENGTH_SHORT).show();
                 } else
                     Toast.makeText(getContext(), R.string.editTextBlank, Toast.LENGTH_SHORT).show();
             }

@@ -82,8 +82,7 @@ public class VolumesFrag extends Fragment {
                                 translations.add(translationSnap.getValue(Translation.class));
                             } catch (DatabaseException ignored){
                             }
-                        } else
-                            volume.setVolImg(String.valueOf(translationSnap.getValue()));
+                        } else volume.setVolImg(String.valueOf(translationSnap.getValue()));
                     }
                     volume.setTranslations(translations);
                     volumes.add(volume);

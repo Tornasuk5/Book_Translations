@@ -43,7 +43,6 @@ public class NovelTranslationsFrag extends Fragment {
     private ArrayList<Translation> translations;
     private Translation translation;
     private int numPag;
-    private String idTranslation;
     private String novel;
     private String volume;
     private ConstraintLayout progLayout;
@@ -106,8 +105,7 @@ public class NovelTranslationsFrag extends Fragment {
                                 if(translationPag.split(Constantes.refID)[1].equals(String.valueOf(numPag))) {
                                     translations.add(translation);
                                     translationsDetected = true;
-                                } else if(translationsDetected)
-                                    break;
+                                } else if(translationsDetected) break;
                             } catch (DatabaseException ignored){
                             }
                         }
@@ -132,7 +130,6 @@ public class NovelTranslationsFrag extends Fragment {
                         @Override
                         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                             firebasebdd.child(String.valueOf(translations.get(translationsBinding.rvTranslations.getChildAdapterPosition(viewHolder.itemView)).getId())).removeValue();
-                            translationsAdapter.notifyDataSetChanged();
                         }
                     });
                     ith.attachToRecyclerView(translationsBinding.rvTranslations);
@@ -151,7 +148,6 @@ public class NovelTranslationsFrag extends Fragment {
                 }
             });
         }
-
         return fragView;
     }
 }

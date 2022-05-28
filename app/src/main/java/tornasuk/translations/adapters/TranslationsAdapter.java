@@ -85,10 +85,17 @@ public class TranslationsAdapter extends RecyclerView.Adapter<TranslationsAdapte
                 } else
                     translationsBinding.txtVolPag.setVisibility(View.INVISIBLE);
             } else {
-                if(translation.getId().split("-")[0].equals(Constantes.ID_CLANNAD))
-                    translationsBinding.imgTranslation.setImageResource(R.drawable.icon_clannad);
-                else
-                    translationsBinding.imgTranslation.setImageResource(R.drawable.icon_general);
+                switch (translation.getId().split("-")[0]){
+                    case Constantes.ID_CLANNAD:
+                        translationsBinding.imgTranslation.setImageResource(R.drawable.icon_clannad);
+                        break;
+                    case Constantes.ID_GENERAL:
+                        translationsBinding.imgTranslation.setImageResource(R.drawable.icon_general);
+                        break;
+                    case Constantes.ID_KOICHOCO:
+                        translationsBinding.imgTranslation.setImageResource(R.drawable.choco);
+                        break;
+                }
             }
 
             translationsBinding.cardTranslations.setBackground(ContextCompat.getDrawable(context, R.drawable.ripple_translations));

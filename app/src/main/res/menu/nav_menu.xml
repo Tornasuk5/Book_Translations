@@ -38,5 +38,10 @@
             android:checkable="false"
             android:title="@string/navTextClannad"
             />
+        <item android:id="@+id/nav_koichoco"
+            android:icon="@drawable/choco"
+            android:checkable="false"
+            android:title="@string/navTextKoichoco"
+            />
     </group>
 </menu>

@@ -121,29 +121,31 @@ public class SearchTranslations extends Fragment {
                 translations = new ArrayList<>();
 
                 for (DataSnapshot novelSnap : snapshot.getChildren()) {
-                    if(!novelSnap.getChildren().iterator().next().getKey().contains("Volume")) {
-                        for (DataSnapshot translationSnap : novelSnap.getChildren()){
-                            if(!translationSnap.getKey().equals("volImg")) {
-                                try {
-                                    translations.add(translationSnap.getValue(Translation.class));
-                                } catch (DatabaseException ignored){
-                                }
-                            }
+                    if (novelSnap.hasChild("Volume 1")) {
+                        for (DataSnapshot volSnap : novelSnap.getChildren()) {
+                            if (volSnap.getChildrenCount() > 1)
+                                volumes.add(volSnap);
                         }
                     } else {
-                        for (DataSnapshot volSnap : novelSnap.getChildren()){
-                            if(volSnap.getChildrenCount() > 1)
-                                volumes.add(volSnap);
+                        for (DataSnapshot translationSnap : novelSnap.getChildren()) {
+                            if (!translationSnap.getKey().equals("volImg")) {
+                                try {
+                                    translations.add(translationSnap.getValue(Translation.class));
+                                } catch (DatabaseException ignored) {
+                                }
+                            }
                         }
                     }
                 }
 
-                for (DataSnapshot volSnap : volumes){
-                    for(DataSnapshot translationSnap : volSnap.getChildren()){
-                        if(!translationSnap.getKey().equals("volImg")) {
-                            try {
-                                translations.add(translationSnap.getValue(Translation.class));
-                            } catch (DatabaseException ignored){
+                if (!volumes.isEmpty()) {
+                    for (DataSnapshot volSnap : volumes) {
+                        for (DataSnapshot translationSnap : volSnap.getChildren()) {
+                            if (!translationSnap.getKey().equals("volImg")) {
+                                try {
+                                    translations.add(translationSnap.getValue(Translation.class));
+                                } catch (DatabaseException ignored) {
+                                }
                             }
                         }
                     }
@@ -211,8 +213,6 @@ public class SearchTranslations extends Fragment {
                                     .child(translation.getVolume())
                                     .child(translation.getId())
                                     .removeValue();
-
-                            translationsAdapter.notifyDataSetChanged();
                         }
                     }
                 });

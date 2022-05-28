@@ -16,7 +16,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import tornasuk.translations.Constantes;
 import tornasuk.translations.Utils;
 import tornasuk.translations.classes.Translation;
 import tornasuk.translations.R;

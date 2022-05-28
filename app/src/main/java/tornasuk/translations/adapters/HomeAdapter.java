@@ -44,6 +44,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
                 case "Clannad ~After Story~":
                     listHomeBinding.imgLibroHome.setImageResource(R.drawable.icon_clannad);
                     break;
+                case "Koichoco":
+                    listHomeBinding.imgLibroHome.setImageResource(R.drawable.choco);
+                    break;
                 case "Overlord":
                     listHomeBinding.imgLibroHome.setImageResource(R.drawable.overlord_logo3);
                     break;
@@ -59,12 +62,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
             }
 
             listHomeBinding.txtLibroHome.setText(novel.getNovelName());
-            try {
-                String numVolumes = novel.getNumStartedVolumes() + "/" + novel.getVolumes().size();
-                listHomeBinding.txtNumVolumesHome.setText(numVolumes);
-            } catch (NullPointerException npx){
-                listHomeBinding.txtNumVolumesHome.setText("-");
-            }
+            listHomeBinding.txtNumNovelTranslations.setText(String.valueOf(novel.getNumNovelTranslations()));
 
             String txtPto = novel.getTranslationsPercent() + "%";
             listHomeBinding.ptoHome.setText(txtPto);

@@ -27,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import tornasuk.translations.adapters.PagesAdapter;
 import tornasuk.translations.classes.Page;
@@ -144,7 +145,7 @@ public class PagesFrag extends Fragment {
                         lastNumPg = numPg;
                 }
 
-                pages.sort((p1, p2) -> Integer.compare(p1.getNumPage(), p2.getNumPage()));
+                pages.sort(Comparator.comparingInt(Page::getNumPage));
 
                 pages.add(new Page());
 

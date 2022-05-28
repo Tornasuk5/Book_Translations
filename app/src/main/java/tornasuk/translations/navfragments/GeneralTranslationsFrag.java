@@ -24,8 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
-import tornasuk.translations.Constantes;
 import tornasuk.translations.adapters.TranslationsAdapter;
 import tornasuk.translations.classes.Translation;
 import tornasuk.translations.dialogs.EditTranslation;
@@ -84,7 +84,10 @@ public class GeneralTranslationsFrag extends Fragment {
                     translations.add(translationSnapshot.getValue(Translation.class));
                 }
 
-                translations.sort((t1, t2) -> Integer.compare(Integer.parseInt(t2.getId().split("-")[1]), Integer.parseInt(t1.getId().split("-")[1])));
+                if (generalTheme.equals("General"))
+                    translations.sort((t1, t2) -> Integer.compare(Integer.parseInt(t2.getId().split("-")[1]), Integer.parseInt(t1.getId().split("-")[1])));
+                else
+                    translations.sort(Comparator.comparingInt(t -> Integer.parseInt(t.getId().split("-")[1])));
 
                 translationsAdapter = new TranslationsAdapter(getActivity(), translations, generalTheme);
                 generalBinding.rvGeneral.setAdapter(translationsAdapter);
@@ -103,7 +106,6 @@ public class GeneralTranslationsFrag extends Fragment {
                     @Override
                     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                         firebasebdd.child(String.valueOf(translations.get(generalBinding.rvGeneral.getChildAdapterPosition(viewHolder.itemView)).getId())).removeValue();
-                        translationsAdapter.notifyDataSetChanged();
                     }
                 });
                 ith.attachToRecyclerView(generalBinding.rvGeneral);

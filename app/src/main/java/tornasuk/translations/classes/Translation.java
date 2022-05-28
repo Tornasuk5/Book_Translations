@@ -2,6 +2,7 @@ package tornasuk.translations.classes;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Translations")
@@ -73,6 +74,10 @@ public class Translation {
 
     public void setNovel(String novel) {
         this.novel = novel;
+    }
+
+    public String getNumId(){
+        return this.id != null ? this.id.split("-")[1] : "0";
     }
 }
 

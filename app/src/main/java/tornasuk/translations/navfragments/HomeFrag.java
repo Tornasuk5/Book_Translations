@@ -41,7 +41,6 @@ public class HomeFrag extends Fragment {
     private int numNovelTranslations;
     private int totalCountTranslations;
     private HashMap<String, Integer> novelsTranslationsCount;
-    private int numStartedVolumesNovel;
 
     private Animation animFade;
 
@@ -98,34 +97,33 @@ public class HomeFrag extends Fragment {
                 totalCountTranslations = 0;
 
                 for(DataSnapshot novelSnap : snapshot.getChildren()){
-                    numStartedVolumesNovel = 0;
                     numNovelTranslations = 0;
                     volumes = new ArrayList<>();
                     Novel novel = new Novel(novelSnap.getKey());
-                    if(!novelSnap.getChildren().iterator().next().getKey().contains("Volume")){
-                        if(novel.getNovelName().equals("Clannad"))
-                            novel.setNovelName(getString(R.string.navTextClannad));
-                        numNovelTranslations = (int) snapshot.child(novel.getNovelName()).getChildrenCount();
-                        totalCountTranslations += numNovelTranslations;
-                        novel.setNumStartedVolumes(0);
-                    } else {
+                    if(novelSnap.hasChild("Volume 1")){
                         for (DataSnapshot volSnap : snapshot.child(novel.getNovelName()).getChildren()) {
                             if (volSnap.getChildrenCount() > 1) {
-                                numStartedVolumesNovel++;
                                 numNovelTranslations += (int) volSnap.getChildrenCount() - 1;
                                 totalCountTranslations += numNovelTranslations;
                             }
                             volumes.add(new Volume());
                         }
                         novel.setVolumes(volumes);
-                        novel.setNumStartedVolumes(numStartedVolumesNovel);
+                        novel.setNumNovelTranslations(numNovelTranslations);
+                    } else {
+                        numNovelTranslations = (int) snapshot.child(novel.getNovelName()).getChildrenCount();
+                        totalCountTranslations += numNovelTranslations;
+                        novel.setNumNovelTranslations(numNovelTranslations);
+                        if(novel.getNovelName().equals("Clannad"))
+                            novel.setNovelName(getString(R.string.navTextClannad));
                     }
                     novelsTranslationsCount.put(novel.getNovelName(), numNovelTranslations);
                     novels.add(novel);
                 }
 
+                int novelPto = 0;
+
                 for(int i = 0; i < novelsTranslationsCount.size(); i++){
-                    int novelPto;
                     try {
                         novelPto = (novelsTranslationsCount.get(novels.get(i).getNovelName()) * 100) / totalCountTranslations;
                     } catch (ArithmeticException ax){

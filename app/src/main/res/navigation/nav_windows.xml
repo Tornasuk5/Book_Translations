@@ -32,6 +32,16 @@
             android:defaultValue="Clannad" />
     </fragment>
     <fragment
+        android:id="@+id/nav_koichoco"
+        android:name="tornasuk.translations.navfragments.GeneralTranslationsFrag"
+        android:label="@string/navTextKoichoco"
+        tools:layout="@layout/general_layout">
+        <argument
+            android:name="@string/generalArg"
+            app:argType="string"
+            android:defaultValue="Koichoco" />
+    </fragment>
+    <fragment
         android:id="@+id/nav_overlord"
         android:name="tornasuk.translations.navfragments.VolumesFrag"
         android:label="@string/navTextOverlord"
